@@ -57,4 +57,8 @@ const calculateExercises = (
   };
 };
 
-console.log(calculateExercises([3, 0, 2, 4.5, 0, 3, 1], 2));
+const targetArg: number = Number(process.argv[2]);
+// slicing the arguments from after the target number, then mapping it as number
+const hoursArg: Array<number> = process.argv.slice(3).map(Number);
+
+console.log(calculateExercises(hoursArg, targetArg));
