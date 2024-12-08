@@ -1,5 +1,5 @@
 export const calculateBmi = (height: number, weight: number) => {
-  let bmi: number = weight / (height / 100) ** 2;
+  const bmi: number = weight / (height / 100) ** 2;
 
   if (18.5 <= bmi && bmi <= 25) {
     return 'Normal range';

@@ -1,7 +1,7 @@
 interface Result {
   periodLength: number;
   trainingDays: number;
-  success: Boolean;
+  success: boolean;
   rating: number;
   ratingDescription: string;
   target: number;
@@ -13,7 +13,7 @@ const calculateExercises = (
   targetHours: number,
 ): Result => {
   // number of days
-  let periodLength: number = hours.length;
+  const periodLength: number = hours.length;
 
   // number of training days
   let trainingDays: number = 0;
@@ -25,11 +25,11 @@ const calculateExercises = (
   }
 
   // average per day training
-  let average: number =
+  const average: number =
     hours.reduce((a, b) => a + b, 0) / hours.length;
 
   // if it was target was met
-  let success: Boolean = average >= targetHours;
+  const success: boolean = average >= targetHours;
 
   // rating and the text description
   let rating: number;
