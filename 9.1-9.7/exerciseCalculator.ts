@@ -8,7 +8,7 @@ interface Result {
   average: number;
 }
 
-const calculateExercises = (
+export const calculateExercises = (
   hours: Array<number>,
   targetHours: number,
 ): Result => {
@@ -57,8 +57,10 @@ const calculateExercises = (
   };
 };
 
-const targetArg: number = Number(process.argv[2]);
-// slicing the arguments from after the target number, then mapping it as number
-const hoursArg: Array<number> = process.argv.slice(3).map(Number);
+if (require.main === module) {
+  const targetArg: number = Number(process.argv[2]);
+  // slicing the arguments from after the target number, then mapping it as number
+  const hoursArg: Array<number> = process.argv.slice(3).map(Number);
 
-console.log(calculateExercises(hoursArg, targetArg));
+  console.log(calculateExercises(hoursArg, targetArg));
+}
